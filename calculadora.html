@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Água</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="title">Calculadora de Água</div>
+            <div class="input">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso">
+            </div>
+            <button id="calcular">Calcular</button>
+            <div class="result" id="resultado"></div>
+            <a href="index.html">
+                <button class="voltar">Voltar</button>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            const peso = +document.getElementById('peso').value;
+            const resultado = document.getElementById('resultado');
+
+            if (peso) {
+                const consumoAgua = (peso * 35).toFixed(0);
+                resultado.textContent = `Você deve consumir cerca de ${consumoAgua}ml de água por dia.`;
+            } else {
+                resultado.textContent = 'Por favor, insira seu peso!';
+            }
+        });
+    </script>
+</body>
+  </html>
